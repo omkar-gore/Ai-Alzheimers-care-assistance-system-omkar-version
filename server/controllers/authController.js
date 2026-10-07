@@ -22,10 +22,10 @@ export const register = async (req, res) => {
       role,
 
       // Patient
-      caregiverName,
-      emergencyContact,
-      address,
-      dateOfBirth,
+      // caregiverName,
+      // emergencyContact,
+      // address,
+      // dateOfBirth,
 
       // Caregiver
       relationshipWithPatient,
@@ -153,33 +153,33 @@ export const register = async (req, res) => {
     // ===============================
 
     if (role === 'patient') {
-      if (
-        !caregiverName ||
-        !emergencyContact ||
-        !address ||
-        !dateOfBirth
-      ) {
-        return res.status(400).json({
-          message: 'Missing patient additional fields',
-        });
-      }
+      // if (
+      //   !caregiverName ||
+      //   !emergencyContact ||
+      //   !address ||
+      //   !dateOfBirth
+      // ) {
+      //   return res.status(400).json({
+      //     message: 'Missing patient additional fields',
+      //   });
+      // }
 
-      const caregiverUser = await User.findOne({
-        name: caregiverName,
-        role: 'caregiver',
-      });
+      // const caregiverUser = await User.findOne({
+      //   name: caregiverName,
+      //   role: 'caregiver',
+      // });
 
-      const caregiverId = caregiverUser
-        ? caregiverUser._id
-        : null;
+      // const caregiverId = caregiverUser
+      //   ? caregiverUser._id
+      //   : null;
 
       const patientProfile = new PatientProfile({
         user: user._id,
-        caregiverName,
-        emergencyContact,
-        address,
-        dateOfBirth,
-        caregiver: caregiverId,
+        // caregiverName,
+        // emergencyContact,
+        // address,
+        // dateOfBirth,
+        caregiver:null,
         doctor: null,
       });
 

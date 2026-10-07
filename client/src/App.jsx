@@ -32,6 +32,7 @@ import Appointments from './pages/caregiver/Appointments';
 import Chat from './pages/caregiver/Chat';
 import Reports from './pages/caregiver/Reports';
 import CaregiverProfile from './pages/caregiver/Profile';
+import CaregiverMedicines from './pages/caregiver/Medicines';
 
 // =========================================================
 // DOCTOR PAGES
@@ -250,6 +251,16 @@ function App() {
                 <Schedule />
               </PrivateRoute>
             }
+          />
+          
+          {/* CAREGIVER medicines */}
+          <Route
+           path="/caregiver/medicines"
+           element={
+              <PrivateRoute allowedRoles={['caregiver']}>
+               <CaregiverMedicines />
+              </PrivateRoute>
+           }
           />
 
 

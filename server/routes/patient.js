@@ -6,6 +6,7 @@ import {
   addMedicine,
   updateMedicine,
   deleteMedicine,
+  updateMedicineStatus,
 } from '../controllers/medicineController.js';
 
 import {
@@ -33,6 +34,10 @@ router.get('/medicines', getMedicines);
 router.post('/medicines', addMedicine);
 router.put('/medicines/:id', updateMedicine);
 router.delete('/medicines/:id', deleteMedicine);
+router.put(
+  '/medicines/:id/status',
+  updateMedicineStatus
+);
 
 // Schedule
 router.get('/schedules', getSchedule);

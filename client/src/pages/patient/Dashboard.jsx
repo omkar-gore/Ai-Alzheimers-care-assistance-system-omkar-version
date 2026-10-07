@@ -141,6 +141,25 @@ const Dashboard = () => {
     }
   };
 
+  const updateMedicineStatus = async (medicineId, status) => {
+  try {
+    await axios.put(
+      `/patient/medicines/${medicineId}/status`,
+      { status }
+    );
+
+    setMedicines((prev) =>
+      prev.map((medicine) =>
+        medicine._id === medicineId
+          ? { ...medicine, status }
+          : medicine
+      )
+    );
+  } catch (error) {
+    console.error('Failed to update medicine status:', error);
+  }
+  };  
+
   /*
    * LOGOUT
    *

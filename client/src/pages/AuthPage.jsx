@@ -231,10 +231,10 @@ const AuthPage = () => {
     confirmPassword: '',
 
     // Patient
-    caregiverName: '',
-    emergencyContact: '',
-    address: '',
-    dateOfBirth: '',
+    // caregiverName: '',
+    // emergencyContact: '',
+    // address: '',
+    // dateOfBirth: '',
 
     // Caregiver
     relationshipWithPatient: '',
@@ -398,27 +398,27 @@ const AuthPage = () => {
     ======================================================= */
 
     if (role === 'patient') {
-      if (
-        !form.caregiverName ||
-        !form.emergencyContact ||
-        !form.address ||
-        !form.dateOfBirth
-      ) {
-        setError(
-          'Please fill all patient care information.'
-        );
-        return;
-      }
+      // if (
+      //   // !form.caregiverName ||
+      //   // !form.emergencyContact ||
+      //   // !form.address ||
+      //   // !form.dateOfBirth
+      // ) {
+      //   setError(
+      //     'Please fill all patient care information.'
+      //   );
+      //   return;
+      // }
 
-      const datePattern =
-        /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+      // const datePattern =
+      //   /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
 
-      if (!datePattern.test(form.dateOfBirth)) {
-        setError(
-          'Please enter a valid date of birth in DD/MM/YYYY format.'
-        );
-        return;
-      }
+      // if (!datePattern.test(form.dateOfBirth)) {
+      //   setError(
+      //     'Please enter a valid date of birth in DD/MM/YYYY format.'
+      //   );
+      //   return;
+      // }
     }
 
     /* =======================================================
@@ -475,17 +475,17 @@ const AuthPage = () => {
       ===================================================== */
 
       if (role === 'patient') {
-        payload.caregiverName =
-          form.caregiverName;
+        // payload.caregiverName =
+        //   form.caregiverName;
 
-        payload.emergencyContact =
-          form.emergencyContact;
+        // payload.emergencyContact =
+        //   form.emergencyContact;
 
-        payload.address =
-          form.address;
+        // payload.address =
+        //   form.address;
 
-        payload.dateOfBirth =
-          form.dateOfBirth;
+        // payload.dateOfBirth =
+        //   form.dateOfBirth;
       }
 
       /* =====================================================
@@ -1050,7 +1050,7 @@ const AuthPage = () => {
                         PATIENT INFORMATION
                     ================================================= */}
 
-                    {role === 'patient' && (
+                    {/*{role === 'patient' && (
                       <section>
 
                         <div className="mb-5 flex items-center gap-3">
@@ -1109,7 +1109,7 @@ const AuthPage = () => {
 
                           </div>
 
-                          {/* DATE OF BIRTH */}
+                          {/* DATE OF BIRTH 
 
                           <div className="group">
 
@@ -1151,7 +1151,7 @@ const AuthPage = () => {
 
                         </div>
                       </section>
-                    )}
+                    )}*/}
 
                     {/* =================================================
                         CAREGIVER INFORMATION

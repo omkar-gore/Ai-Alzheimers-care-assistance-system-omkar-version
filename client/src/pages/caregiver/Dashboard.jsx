@@ -154,6 +154,12 @@ const CaregiverDashboard = () => {
       active: false,
     },
     {
+       name: 'Medicines',
+      icon: Pill,
+      path: '/caregiver/medicines',
+      active: false,
+    },
+    {
       name: 'Appointments',
       icon: CalendarDays,
       path: '/caregiver/appointments',
